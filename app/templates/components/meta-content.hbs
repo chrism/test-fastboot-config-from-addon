@@ -1,3 +1,9 @@
-This is some content from the component:
+<div class="">
+  {{#each-in this.config as |asset fingerprintedAsset|}}
+    fingerprinted: {{fingerprintedAsset}}
+  {{/each-in}}
+</div>
 
-{{this.config}}
+<img src={{this.fingerPrintedPath}} alt="tomster" width="200"/>
+
+<img src="assets/tomster-under-construction.png" alt="tomster" width="200"/>

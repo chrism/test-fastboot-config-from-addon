@@ -1,5 +1,6 @@
 import Component from '@ember/component';
 import { inject as service } from '@ember/service';
+import { computed } from '@ember/object';
 
 export default Component.extend({
   fastboot: service(),
@@ -16,6 +17,12 @@ export default Component.extend({
       configHash = JSON.parse(decodeURIComponent(rawConfig));
     }
 
-    this.config = configHash['asset-map'].foo;
-  }
+    console.log({ configHash });
+
+    this.config = configHash['asset-map'];
+  },
+
+  fingerPrintedPath: computed(function() {
+    return "assets/tomster-" + "under-" + "construction.png";
+  })
 });
